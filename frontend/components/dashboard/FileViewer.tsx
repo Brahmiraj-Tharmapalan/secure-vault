@@ -163,7 +163,7 @@ export function FileViewer({ fileId }: FileViewerProps) {
                                         <div key={i} className="flex gap-4 relative">
                                             {/* Connector Line */}
                                             {i !== fileData.activity.length - 1 && (
-                                                <div className="absolute left-[11px] top-8 bottom-[-16px] w-[1px] bg-white/10" />
+                                                <div className="absolute left-[11px] top-8 bottom-[-16px] w-px bg-white/10" />
                                             )}
 
                                             <div className="mt-1">

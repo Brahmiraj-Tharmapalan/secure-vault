@@ -42,10 +42,8 @@ export function Header() {
                 />
             </div>
 
-            <div className="flex-1 md:flex-none" />
-
             {/* Right Actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 ml-auto">
                 <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-white">
                     <Bell className="h-5 w-5" />
                     <span className="sr-only">Notifications</span>
