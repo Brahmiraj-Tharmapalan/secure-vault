@@ -4,60 +4,64 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Shield, Lock, Zap, RefreshCw, Key, Users } from "lucide-react"
+import { Shield, Cloud, Tag, Share2, Key, Smartphone } from "lucide-react"
 
 const features = [
     {
         icon: Shield,
-        title: "Bank-Grade Encryption",
-        description: "AES-256 encryption ensures your data remains impossible to crack.",
+        title: "End-to-End Encryption",
+        description: "Your photos are encrypted on your device. Only you hold the keys.",
     },
     {
-        icon: Lock,
-        title: "Zero-Knowledge",
-        description: "We can't see your data. Your private key never leaves your device.",
+        icon: Cloud,
+        title: "Secure Cloud Sync",
+        description: "Access your encrypted vault from any device, anywhere in the world.",
     },
     {
-        icon: Zap,
-        title: "Lightning Fast",
-        description: "Optimized for speed. Access your secured files instantly.",
+        icon: Tag,
+        title: "AI Smart Tagging",
+        description: "Private on-device AI organizes your memories without compromising privacy.",
     },
     {
-        icon: RefreshCw,
-        title: "Real-time Sync",
-        description: "Seamlessly sync your vault across all your devices.",
+        icon: Share2,
+        title: "Private Sharing",
+        description: "Share encrypted links with time-limits and password protection.",
     },
     {
         icon: Key,
-        title: "Password Manager",
-        description: "Built-in secure password generator and storage.",
+        title: "Zero-Knowledge",
+        description: "We literally cannot see your data. It's technically impossible.",
     },
     {
-        icon: Users,
-        title: "Secure Sharing",
-        description: "Share files securely with time-limited links.",
+        icon: Smartphone,
+        title: "Mobile First",
+        description: "Native experience on iOS and Android with biometric lock.",
     },
 ]
 
 export function Features() {
     return (
-        <section id="features" className="container py-20 bg-muted/30">
+        <section id="features" className="container py-24">
             <div className="text-center mb-16 space-y-4">
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose SecureVault?</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-white to-white/70">
+                    Why Choose SecureVault?
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                     Built with security at its core, without compromising on user experience.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {features.map((feature, index) => (
-                    <Card key={index} className="bg-card border-border shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20 hover:-translate-y-1">
+                    <Card key={index} className="bg-white/5 backdrop-blur-md border border-white/10 shadow-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:border-primary/30 hover:-translate-y-1 group">
                         <CardHeader>
-                            <feature.icon className="h-10 w-10 text-primary mb-2" />
-                            <CardTitle>{feature.title}</CardTitle>
+                            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                <feature.icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <CardTitle className="text-xl text-white group-hover:text-primary transition-colors">{feature.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-muted-foreground">{feature.description}</p>
+                            <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                         </CardContent>
                     </Card>
                 ))}
@@ -65,3 +69,4 @@ export function Features() {
         </section>
     )
 }
+

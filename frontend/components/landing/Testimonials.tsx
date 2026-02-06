@@ -41,7 +41,10 @@ export function Testimonials() {
                     <Card key={index} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                         <CardHeader className="flex flex-row items-center gap-4">
                             <Avatar>
-                                <AvatarImage src={`https://i.pravatar.cc/150?u=${testimonial.name}`} />
+                                <AvatarImage
+                                    src={`https://i.pravatar.cc/80?u=${testimonial.name}`}
+                                    srcSet={`https://i.pravatar.cc/40?u=${testimonial.name} 1x, https://i.pravatar.cc/80?u=${testimonial.name} 2x`}
+                                />
                                 <AvatarFallback>{testimonial.initials}</AvatarFallback>
                             </Avatar>
                             <div>
