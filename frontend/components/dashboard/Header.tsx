@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Bell, Menu, Search, User } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -68,17 +69,17 @@ export function Header() {
                             </div>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator className="bg-white/10" />
-                        <DropdownMenuItem className="focus:bg-white/10 focus:text-white">
-                            Profile
+                        <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                            <Link href="/dashboard/profile">Profile</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="focus:bg-white/10 focus:text-white">
-                            Billing
+                        <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                            <Link href="/dashboard/billing">Billing</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="focus:bg-white/10 focus:text-white">
-                            Settings
+                        <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                            <Link href="/dashboard/settings">Settings</Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator className="bg-white/10" />
-                        <DropdownMenuItem className="focus:bg-white/10 focus:text-white text-red-400">
+                        <DropdownMenuItem className="focus:bg-white/10 focus:text-white text-red-400 cursor-pointer">
                             Log out
                         </DropdownMenuItem>
                     </DropdownMenuContent>

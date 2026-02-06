@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Download, Share2, Trash2, FileIcon, ShieldCheck, Lock, Activity, Clock } from "lucide-react"
+import { ArrowLeft, Download, Share2, Trash2, ShieldCheck, Lock, Activity, Clock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -15,7 +15,7 @@ interface FileViewerProps {
 }
 
 export function FileViewer({ fileId }: FileViewerProps) {
-    const [activeTab, setActiveTab] = useState("details")
+
 
     // Mock data based on ID
     const fileData = {
@@ -89,7 +89,7 @@ export function FileViewer({ fileId }: FileViewerProps) {
                     </div>
 
                     {/* Background "blurred" content effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-blue-900/10 backdrop-blur-3xl" />
+                    <div className="absolute inset-0 bg-linear-to-br from-purple-900/10 to-blue-900/10 backdrop-blur-3xl" />
                 </div>
 
                 {/* Sidebar Details */}
