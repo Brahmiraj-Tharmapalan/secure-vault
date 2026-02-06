@@ -4,7 +4,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
     LayoutDashboard,
-    shield,
     Files,
     Share2,
     Settings,
@@ -14,14 +13,13 @@ import {
     ShieldCheck
 } from "lucide-react"
 
+import { UploadModal } from "@/components/dashboard/UploadModal"
 import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { ScrollArea } from "@/components/ui/scroll-area"
 
-interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> { }
-
-export function Sidebar({ className }: SidebarProps) {
+export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
     const pathname = usePathname()
 
     const routes = [
@@ -93,10 +91,12 @@ export function Sidebar({ className }: SidebarProps) {
                 </div>
 
                 <div className="px-3 py-2">
-                    <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_-5px_rgba(168,85,247,0.5)]">
-                        <Plus className="mr-2 h-4 w-4" />
-                        Upload New
-                    </Button>
+                    <UploadModal>
+                        <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_-5px_rgba(168,85,247,0.5)]">
+                            <Plus className="mr-2 h-4 w-4" />
+                            Upload New
+                        </Button>
+                    </UploadModal>
                 </div>
 
                 <div className="px-3 py-6 mt-auto absolute bottom-0 w-full">
